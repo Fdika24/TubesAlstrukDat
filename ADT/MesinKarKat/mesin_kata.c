@@ -10,8 +10,15 @@ void IgnoreBlank(){
     }
 }
 
-void STARTKATA(){
-    START(fileName);
+void printKata(Kata kata){
+  for(int i = 0; i <= kata.Length; i++){
+    printf("%c", kata.TabKata[i]);
+  }
+  printf("\n");
+}
+
+void STARTKATA(int type){
+    START(type);
     IgnoreBlank();
     if (CC == MARK){
         EndKata = 1;

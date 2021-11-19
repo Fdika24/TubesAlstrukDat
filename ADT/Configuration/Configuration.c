@@ -9,12 +9,6 @@ int converter(char pep){
     return pep - '0';
 }
 
-void printKata(Kata kata){
-  for(int i = 0; i <= kata.Length; i++){
-    printf("%c", kata.TabKata[i]);
-  }
-  printf("\n");
-}
 void setMap(Kata mapConfig) {
     for (int i = 0; i <= mapConfig.Length; i++){
         map[i] = mapConfig.TabKata[i];
@@ -27,13 +21,13 @@ void setConfigFile(){
 }
 void loadConfig() {
     int flag = 0;
-    STARTKATA();
+    STARTKATA(1);
 
     int line = 1;
     int index = 0;
     while (!EndKata) {
-       // printf("line %d  : \n",line);
-        //printKata(CKata);
+        // printf("line %d  : \n",line);
+        // printKata(CKata);
         if (line == 1) {
             setMapLenght(atoi(CKata.TabKata));
         } 

@@ -13,7 +13,7 @@ extern char CC;
 extern boolean EOP;
 extern char fileName [255];
 
-void START();
+void START(int type);
 /* Mesin siap dioperasikan. Pita disiapkan untuk dibaca.
    Karakter pertama yang ada pada pita posisinya adalah pada jendela.
    I.S. : sembarang

@@ -13,7 +13,7 @@ static FILE * pita;
 static int retval;
 char fileName [255];
 
-void START() {
+void START(int type) {
 /* Mesin siap dioperasikan. Pita disiapkan untuk dibaca.
    Karakter pertama yang ada pada pita posisinya adalah pada jendela.
    I.S. : sembarang
@@ -21,11 +21,16 @@ void START() {
           Jika CC = MARK maka EOP akan menyala (true) */
 
 	/* Algoritma */
-	 pita = fopen(fileName,"r");
-       //error handler, to be continue
-       if (pita == NULL) {
-              printf("Found null");
-              return;
+       if (type == 1) {
+              pita = fopen(fileName,"r");
+              //error handler, to be continue
+              if (pita == NULL) {
+                     printf("Found null");
+                     return;
+              }
+       } else {
+              pita = stdin;
+              //printf("Your name : ")
        }
        //printf("start");
 	ADV();
