@@ -1,6 +1,5 @@
 #include "Game.h"
 #include "../../ADT/Configuration/Configuration.h"
-#include "../../ADT/Player/Player.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -9,15 +8,19 @@ boolean isEndGame = false;
 player players[4];
 
 void GameView(int opsi) {
-    setConfigFile();
-    loadConfig();
     if (opsi == 1) { //New Game
         NewGame();
     } else { //Load Game
         LoadGame();
     }
+    setConfigFile();
+    loadConfig();
     printf("\n Let's Start The Game!\n");
+    displayMap();
     StartGame();
+    if (isEndGame) {
+        displayRank();
+    }
     ExitGame();
 }
 
@@ -46,13 +49,16 @@ void LoadGame() {
 
 // The Game
 void StartGame() {
-    int exitGame = 0;
+    boolean exitGame = false;
+    int round = 1;
     //Loop per ronde
-    while (!isEndGame) {
+    //while (!isEndGame) {
+        printf("Round %d\n",round);
         for (int i = 0; i < playersPlaying; i++) {
 
         }
-    }
+        round++;
+    //}
 }
 
 void ExitGame() {
@@ -62,4 +68,15 @@ void ExitGame() {
     } else {
         // Save progress
     }
+}
+
+void displayRank() {
+    for (int i = 0; i < playersPlaying; i++) {
+        printf("Rank #%d : %s \n",i+1,players[i].name);
+    }
+}
+
+void displayMap() {
+    printf("Game map :\n");
+    printf("%s\n",map);
 }
