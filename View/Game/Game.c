@@ -2,9 +2,10 @@
 #include "../../ADT/Configuration/Configuration.h"
 #include "../../ADT/Player/Player.h"
 #include <stdio.h>
+#include <string.h>
 
 int playersPlaying = 0;
-int isEndGame = 0;
+boolean isEndGame = false;
 player players[4];
 
 void GameView(int opsi) {
@@ -32,12 +33,9 @@ void NewGame() {
         for (int i = 0; i < playersPlaying; i++) {
             player temp;
             printf("Player %d name :",i+1);
-            //MARK: BIKIN ERROR AJA ANJING
             setPlayer(&temp);
             printf("\n");
             players[i] = temp;
-            printf("Player position %d",players[i].position);
-            //temp = NULL;
         }
     }
 }
@@ -46,11 +44,14 @@ void LoadGame() {
 
 }
 
+// The Game
 void StartGame() {
     int exitGame = 0;
     //Loop per ronde
-    for (int i = 0; i < playersPlaying; i++) {
+    while (!isEndGame) {
+        for (int i = 0; i < playersPlaying; i++) {
 
+        }
     }
 }
 

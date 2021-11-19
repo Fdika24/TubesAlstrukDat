@@ -7,9 +7,13 @@
 
 #ifndef GAME_h
 #define GAME_h
+#include "../ADT/boolean.h"
 
+// how many players are playing
 extern int playersPlaying;
-extern int isEndGame;
+
+// if someone win then isEndGame
+extern boolean isEndGame;
 
 void GameView(int opsi);
 void NewGame();

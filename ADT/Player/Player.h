@@ -16,13 +16,24 @@
 
 typedef struct {
     int position;
-    Kata name;
+    char name[20];
     //skills
 } player;
 
 
 // set player properties
 void setPlayer(player *thePlayer);
+
+// Role dice
+void playerRoleDice(player* thePlayer,int maxDice);
+
+// teleport
+void playerTeleport(player *thePlayer,int endPoint);
+
+// use skill
+void playerUseSkill(player *thePlayer);
+
+void playerOption();
 
 
 
