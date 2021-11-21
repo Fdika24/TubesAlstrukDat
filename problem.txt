@@ -1,0 +1,5 @@
+PROBLEMS
+
+1.
+    a. location : Configuration.c
+    b. Reasons  : Processing the teleporters still needed to be fix, because it's broken

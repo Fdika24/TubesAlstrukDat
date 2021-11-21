@@ -34,4 +34,15 @@ void displayRank();
 // display game rule
 void displayGameRule();
 
+// show the position of the player
+void showPlayerPosition(int position);
+
+// show player command
+
+void showPlayerCommand();
+
+//check if it's the end of the game
+boolean checkIsEndGame(int position);
+
+
 #endif /* GAME_h */ 

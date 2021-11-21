@@ -15,6 +15,7 @@
 
 extern char map[255];
 extern int mapLenght;
+extern int teleportLenght;
 extern int maxDiceRole;
 typedef struct {
     int startPoint;

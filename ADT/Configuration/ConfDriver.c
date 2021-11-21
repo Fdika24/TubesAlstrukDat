@@ -17,10 +17,9 @@ int main() {
         printf("Map properties not set \n");
         return -1;
     }
-    if (teleporters[0].startPoint != 3){
-        printf("Teleporter gone wrong \n");
-        printf("Teleporter start point %d",teleporters[0].startPoint);
-        return -1;
+    
+    for (int pepek = 0; pepek < teleportLenght;pepek++) {
+        printf("start : %d , end : %d \n",teleporters[pepek].startPoint,teleporters[pepek].endPoint);
     }
     freeTeleporters();
     printf("Pass all test,gratio!\n");

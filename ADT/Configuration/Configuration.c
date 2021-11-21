@@ -3,6 +3,7 @@
 int mapLenght = 0;
 int maxDiceRole = 0;
 char map[255];
+int teleportLenght = 0;
 
 int converter(char pep){
     return pep - '0';
@@ -36,10 +37,28 @@ void loadConfig() {
             setMaxDiceRole(atoi(CKata.TabKata));
         }
         else if( line == 4) {
-            allocateTeleportersLenght(atoi(CKata.TabKata));
+            teleportLenght = atoi(CKata.TabKata);
+            allocateTeleportersLenght(teleportLenght);
         } else {
-            int start = converter(CKata.TabKata[0]);
-            int end = converter(CKata.TabKata[2]);
+
+            //MARK: PROBLEMATIC, need to fix ASAP!
+            int start = 0;// atoi(CKata.TabKata[0]);
+            int end = 0;//atoi(CKata.TabKata[2]);
+            int flexing_lah = 1;
+            for (int x = 0; x < CKata.Length; x++) {
+                if (CKata.TabKata[x] == ' ') {
+                    flexing_lah = 2;
+                }
+                if (flexing_lah == 1 && CKata.TabKata[x] != ' ') {
+                    start *= 10;
+                    start += converter(CKata.TabKata[x]);
+                   // printf(" yg di convert : %c, hasil  : %d\n",CKata.TabKata[x],converter(CKata.TabKata[x]));
+                } else  if (flexing_lah == 2 && CKata.TabKata[x] != ' ') {
+                    end *= 10;
+                    end += converter(CKata.TabKata[x]);
+                  //  printf(" yg di convert : %c, hasil  : %d\n",CKata.TabKata[x],converter(CKata.TabKata[x]));
+                }
+            }
             setTeleporter(index,start,end);
             index ++;
         }

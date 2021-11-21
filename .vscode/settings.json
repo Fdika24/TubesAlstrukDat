@@ -4,6 +4,17 @@
         "mesin_kar.h": "c",
         "game.h": "c",
         "configuration.h": "c",
-        "mesin_kata.h": "c"
+        "mesin_kata.h": "c",
+        "chrono": "c",
+        "cmath": "c",
+        "random": "c",
+        "*.tcc": "c",
+        "memory": "c",
+        "mutex": "c",
+        "new": "c",
+        "streambuf": "c",
+        "functional": "c",
+        "typeinfo": "c",
+        "round.h": "c"
     }
 }

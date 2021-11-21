@@ -10,7 +10,6 @@
 
 #include "../boolean.h"
 #include "../Skill/Skill.h"
-#include "../MesinKarKat/mesin_kata.h"
 
 //Initial position is always 0
 
@@ -27,13 +26,20 @@ void setPlayer(player *thePlayer);
 // Role dice
 void playerRoleDice(player* thePlayer,int maxDice);
 
+// check future displacement
+boolean isPlayerCanMove(int change,int position, boolean isUpward);
+
 // teleport
 void playerTeleport(player *thePlayer,int endPoint);
 
 // use skill
 void playerUseSkill(player *thePlayer);
 
-void playerOption();
+// scan the option
+int playerOption();
+
+//check if teleport eligible at that point and condition, if it's then the player will teleport
+void ifCanTeleport(player *thePlayer);
 
 
 
